@@ -16,5 +16,11 @@ const buttonVariants: Record<ButtonVariant, string> = {
 export const ButtonContainer = styled.button<ButtonContainerProps>`
   width: 100px;
   height: 40px;
-  background-color: ${({ variant = 'primary' }) => buttonVariants[variant]};
+  border-radius: 4px;
+  border: 0;
+  margin: 8px;
+
+  color: ${props => props.theme.white};
+  background-color: ${props => props.theme["green-500"]}
+  /* background-color: ${({ variant = 'primary' }) => buttonVariants[variant]}; */
 `;
