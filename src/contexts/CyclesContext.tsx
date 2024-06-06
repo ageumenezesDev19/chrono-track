@@ -46,14 +46,13 @@ export function CyclesContextProvider({
 
   function markCurrentCycleAsFinished() {
     setCycles((state) =>
-      state.map((cycle) => {
-        if (cycle.id === activeCycleId) {
-          return { ...cycle, interruptedDate: new Date() }
-        } else {
-          return cycle
-        }
-      }),
+      state.map((cycle) =>
+        cycle.id === activeCycleId
+          ? { ...cycle, finishedDate: new Date() }
+          : cycle,
+      ),
     )
+    setActiveCycleId(null)
   }
 
   function createNewCycle(data: CreateCycleData) {
@@ -69,21 +68,16 @@ export function CyclesContextProvider({
     setCycles((state) => [...state, newCycle])
     setActiveCycleId(id)
     setAmountSecondsPassed(0)
-
-    reset()
   }
 
   function interruptCurrentCycle() {
     setCycles((state) =>
-      state.map((cycle) => {
-        if (cycle.id === activeCycleId) {
-          return { ...cycle, interruptedDate: new Date() }
-        } else {
-          return cycle
-        }
-      }),
+      state.map((cycle) =>
+        cycle.id === activeCycleId
+          ? { ...cycle, interruptDate: new Date() }
+          : cycle,
+      ),
     )
-
     setActiveCycleId(null)
   }
 
