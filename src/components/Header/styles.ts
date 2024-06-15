@@ -5,6 +5,11 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  img {
+    width: 4.5rem;
+    margin-left: 1rem;
+  }
+
   nav {
     display: flex;
     gap: 0.5rem;
@@ -24,11 +29,11 @@ export const HeaderContainer = styled.header`
       transition: border-bottom 0.2s;
 
       &:hover {
-        border-bottom: 3px solid ${(props) => props.theme['green-500']};
+        border-bottom: 3px solid ${(props) => props.theme['blue-500']};
       }
 
       &.active {
-        color: ${(props) => props.theme['green-500']};
+        color: ${(props) => props.theme['blue-500']};
       }
     }
   }
