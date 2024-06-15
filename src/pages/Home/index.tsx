@@ -5,6 +5,7 @@ import {
   StartCountdownButton,
   StopCountdownButton,
 } from './styles'
+
 import { useContext } from 'react'
 import { Countdown } from './components/Countdown'
 import { NewCycleForm } from './components/NewCycleForm'
